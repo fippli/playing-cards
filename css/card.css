@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  --card-width: 120px; /* 120px is a good size */
+  --card-padding: 7px;
+  --suit-size: calc(var(--card-width) / 3); /*40px;*/
+}
+
+#board {
+  width: 100%;
+  height: 100vh;
+  background-color: mediumseagreen;
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.playing-card {
+  width: var(--card-width);
+  height: calc(var(--card-width) * 1.62);
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  padding: var(--card-padding);
+  font-size: 24px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.2);
+  margin: 0 10px 10px 0;
+}
+
+.playing-card .suit-left {
+  position: absolute;
+  top: calc(var(--card-padding) + 2px);
+  left: var(--card-padding);
+  line-height: 20px;
+  text-align: center;
+}
+
+.playing-card .suit-center {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  left: 0;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.playing-card .suit-right {
+  position: absolute;
+  bottom: calc(var(--card-padding) + 2px);
+  right: var(--card-padding);
+  transform: rotateX(180deg) rotateY(180deg);
+  line-height: 20px;
+  text-align: center;
+}
+
+.up-side-down {
+  transform: rotate(180deg);
+}
+
+.ace-center {
+  font-size: calc(var(--card-width) / 1.5);
+}
+
+.two-center {
+  font-size: 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+.black {
+  color: black;
+}
+
+.red {
+  color: red;
+}
+
+.transparent {
+  color: transparent;
+}
+
+.card-back {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-size: 4px 4px;
+  border: calc(var(--card-padding) / 2) solid lightskyblue;
+
+  background-image:
+    linear-gradient(to right, lightskyblue 1px, transparent 1px),
+    linear-gradient(to bottom, lightskyblue 1px, transparent 1px);
+}
+
+.suit-column {
+  height: 68%;
+  display: flex;
+  flex-direction: column;
+  line-height: calc(var(--suit-size) / 1.5);
+  font-size: var(--suit-size);
+}
+
+.left-column {
+  padding-left: 5px;
+}
+.right-column {
+  padding-right: 5px;
+}
+
+.suit-center-column {
+  height: 68%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--suit-size);
+}
+
+.suit-small {
+  font-size: 32px;
+}
+
+.suit {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .suit-medium {
+  font-size: 45px;
+} */
+.suit-large {
+  font-size: 70px;
+}
+
+.down {
+  margin-top: auto;
+}
