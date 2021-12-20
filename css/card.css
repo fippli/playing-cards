@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  --card-width: 120px; /* 120px is a good size */
+  --card-width: 57.1mm; /* 57.1mm real size */
+  --card-height: calc(var(--card-width) * 1.5569176883);
   --card-padding: 7px;
   --suit-size: calc(var(--card-width) / 3); /*40px;*/
 }
@@ -18,7 +19,7 @@ body {
 
 .playing-card {
   width: var(--card-width);
-  height: calc(var(--card-width) * 1.62);
+  height: var(--card-height);
   background-color: white;
   position: relative;
   border-radius: 6px;
